@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+  struct s1{
+      union u1{
+          char a[2];
+          char b[2];
+      }u1;
+      union u2{
+          short int c;
+          short int d;
+          
+      }u2;
+  }s1={1,2,3,4};
+  printf("%d %d %d %d\n",s1.u1.a[0],s1.u1.a[1],s1.u1.b[0],s1.u1.b[1]);
+  printf("%d %d",s1.u2.c,s1.u2.d);
+}
